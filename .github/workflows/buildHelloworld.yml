@@ -1,0 +1,14 @@
+build: Hello world
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout Code
+        uses: actions/checkout@v3
+        
+      -name: Print Hello World
+        run: echo "Hello, World!"
+
