@@ -1,18 +1,11 @@
-name: Install Node.Js App
-on:
-  push: 
-    branches: [ main ]
-jobs:
-  build-run:
-    runs-on: ubuntu-latest
-    steps:
-        - name: Checkout Repo
-          uses: actions/checkout@v4
-        - name: Steup node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 18
-        - name: Install dependencies
-          run: npm install
-        - name: Run App
-          run: npm start
+steps:
+  - name: Checkout repo
+    uses: actions/checkout@v4
+
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 18
+
+  - name: Run app
+    run: node app.js   # 👈 replace app.js with your file
